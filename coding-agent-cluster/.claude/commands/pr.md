@@ -17,6 +17,7 @@ For detailed git workflow information including branch naming conventions and re
 
   1. Run `pnpm run lint`, `pnpm run lint:fix`, and analyze if any fixes are needed
   2. Run tests with `pnpm run test` if changes might impact them
+  3. Then check for other rules in cicd pipeline to make sure everything is ready for PR
 
 ### Post-PR
 
