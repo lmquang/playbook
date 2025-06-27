@@ -222,9 +222,17 @@ git pull origin main
 echo "Creating worktree: $WORKTREE_DIR"
 echo "With branch: $BRANCH_NAME"
 
-# Get the parent directory of the main worktree
+# Get the parent directory of the main worktree and repo name
 WORKTREES_PARENT="$(dirname "$MAIN_WORKTREE")"
-NEW_WORKTREE_PATH="$WORKTREES_PARENT/$WORKTREE_DIR"
+REPO_NAME="$(basename "$MAIN_WORKTREE")"
+
+# Create worktree path - use repo name as prefix to avoid conflicts
+NEW_WORKTREE_PATH="$WORKTREES_PARENT/${REPO_NAME}-${WORKTREE_DIR}"
+
+echo "Main worktree: $MAIN_WORKTREE"
+echo "Worktrees parent: $WORKTREES_PARENT"
+echo "Repository name: $REPO_NAME"
+echo "New worktree path: $NEW_WORKTREE_PATH"
 
 git worktree add "$NEW_WORKTREE_PATH" -b "$BRANCH_NAME"
 
