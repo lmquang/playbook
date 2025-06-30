@@ -1,5 +1,6 @@
 ---
 source: https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters
+edited: 2025-06-30
 ---
 
 # How To Use Claude Code To Wield Coding Agent Clusters
@@ -119,6 +120,8 @@ I also found other one-off documentation files to be helpful. For example, I hav
 
 #### Leverage custom slash commands
 
+##### PR
+
 For repeating development workflows, you'll find Claude Code's [custom slash commands](https://docs.anthropic.com/en/docs/claude-code/tutorials#create-custom-slash-commands) useful.
 
 My often-used one is a command I use to "open a PR". After Claude Code has finished working, and the git diff it left behind is satisfactory to me, I will often do `/pr` to have Claude Code proceed to opening a thorough PR (with cleaning up lint, having good commit messages, PR explanation, handling any messy git branch gymnastics I may have done, etc).
@@ -146,6 +149,10 @@ For detailed git workflow information including branch naming conventions and re
   - **Regular repo**: Checkout main and pull latest (while showing PR URL)
   - **Git worktree**: Leave as-is (user will delete when PR is merged)
 ```
+
+##### Session management
+
+I manage my development sessions with a [set of commands](https://github.com/iannuttall/claude-sessions/tree/main) that help me document my work for future reference. This is a great way to keep track of what I did, why I did it, and what I learned along the way.
 
 #### Tasks.json is a nice VS Code feature to fire up Claude Code right away
 
